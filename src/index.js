@@ -12,9 +12,11 @@ fetchBreeds()
   .then(data => {
     loader.classList.replace('loader', 'is-hidden');
 
-    let createMarckSelect = data.map(({ name, id }) => {
-      return `<option value ='${id}'> ${name} </option>`;
-    });
+    let createMarckSelect = data
+      .map(({ name, id }) => {
+        return `<option value ='${id}'> ${name} </option>`;
+      })
+      .join('');
     selectcat.insertAdjacentHTML('beforeend', createMarckSelect);
     new SlimSelect({
       select: selectcat,
@@ -36,13 +38,14 @@ function onChangeBreed(event) {
       loader.classList.replace('loader', 'is-hidden');
       selectcat.classList.remove('is-hidden');
       const { url, breeds } = data[0];
-      container.innerHTML = `<img src="${url}" alt="${breeds[0].name}" width="400"/>
+
+      container.innerHTML = `<img class="cat-img" src="${url}" alt="${breeds[0].name}" width="400"/>
         <div class="cat-info">
         <h2>${breeds[0].name}</h2>
         <p>${breeds[0].description}</p>
         <p>${breeds[0].temperament}</p>
         </div>`;
-      container.classList.remove('is-hidden');
+      // container.classList.remove('is-hidden');
     })
     .catch(onError);
 }

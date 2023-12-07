@@ -17,7 +17,7 @@ function fetchBreeds() {
 }
 function fetchCatByBreed(breedId) {
   return axios
-    .get('https://api.thecatapi.com/v1/images/search?breed_ids={breed.id}')
+    .get(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}`)
     .then(response => {
       return response.data;
     })
