@@ -3,16 +3,20 @@
 }
 .cat-info {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  padding-right: 400px;
 }
 .cat-img {
   display: block;
   max-width: 100%;
   border: 1px solid #0d161b;
+  margin-right: 10px;
+}
+span {
+  font-weight: 400px;
+  font-size: 20px;
 }
 .breed-select {
-  width: 150px;
+  max-width: 400px;
   margin-bottom: 10px;
   padding: 4px;
 }
