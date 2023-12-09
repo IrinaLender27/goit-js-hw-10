@@ -54,5 +54,6 @@ function onChangeBreed(event) {
 function onError() {
   selectcat.classList.remove('is-hidden');
   loader.classList.replace('loader', 'is-hidden');
+  container.classList.add('is-hidden');
   Notify.failure('Oops! Something went wrong! Try reloading the page!');
 }
